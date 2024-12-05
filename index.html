@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Club</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<style>
+    body{
+        margin:0px;
+        padding: 0px;
+        background: url(gym2.jpg);  
+        color: white; 
+        font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .left{
+        display: inline-block;
+        position: absolute;
+        left: 60px;
+        top: 20px;
+
+    }
+    .left img{
+       width: 120px; 
+       filter: invert(100%);
+
+    }
+    
+    .mid{
+        display: block;
+        width: 60%;
+        margin: 20px auto;
+        font-style: bold;
+         /* border: 2px solid green;  */
+
+    }
+    .right{
+        position: absolute;
+        right: 34px;
+        top: 33px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+
+    }
+    .navbar{
+        display: inline-block;
+    }
+    .navbar li{
+        display: inline-block;
+        font-size: 25px;
+    }
+    .navbar li a{
+        color: white;
+        text-decoration: none;
+        padding: 34px 23px;
+    }
+    .navbar li a:hover{
+      text-decoration: underline;
+      color: gray;
+    }
+    .btn{
+        margin: 0px 9px ;
+        color: white;
+        background-color: black;
+        padding: 6px 14px;
+        border: 2px solid gray;
+        font-size: 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+    .btn:hover{
+        background-color: rgb(137, 133, 133);
+    }
+    .container{
+        border: 2px solid rgb(190, 185, 173);
+        margin: 90px 80px;
+        padding: 65px;
+        width: 33%;
+        border-radius: 28px;
+        
+    }
+    .form-group input{
+        text-align: center;
+        display: block;
+        width: 508px;
+        padding: 1px;
+        border: 2px solid black;
+        margin: 11px auto;
+        font-size: 20px;
+        border-radius: 8px;
+        font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+    .container h1{
+        text-align: center;
+    }
+    .container button{
+        display: block;
+        width: 90%;
+        margin: 20px auto;
+
+    }
+
+</style>
+<body>
+    <header class="header">
+        <div class="left">
+            <!-- left box for logo -->
+            <img src="fit4.png" alt="">
+
+
+
+        </div>
+        <div class="mid">
+            <!-- mid box for navigation -->
+             
+             <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+
+        </div>
+        <div class="right">
+            <!-- right box for buttons -->
+          <button class="btn">
+                     Call us now
+          </button>
+          <button class="btn">Email us</button>
+
+        </div>
+    </header>
+    <div class="container">
+      <h1>Join the best gym of Nanded </h1>
+      <form action="noaction.php">
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your Name">
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your Age">
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your Gender">
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your Locality">
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your Email Id">
+        </div>
+        <div class="form-group">
+            <input type="text" name="" placeholder="Enter your Phone Number">
+        </div>
+        <button class="btn">Submit</button>
+      </form>
+    </div>
+</body>
+</html>
