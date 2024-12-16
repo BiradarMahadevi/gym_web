@@ -1,162 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitness Club</title>
-</head>
-<link rel="stylesheet" href="style.css">
-<style>
-    body{
-        margin:0px;
-        padding: 0px;
-        background: url(gym2.jpg);  
-        color: white; 
-        font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    .left{
-        display: inline-block;
-        position: absolute;
-        left: 60px;
-        top: 20px;
+    <style>
+      /* General Reset */
+      body {
+        margin: 0;
+        padding: 0;
+        background: url(gym2.jpg) no-repeat center center/cover;
+        color: white;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+          Arial, sans-serif;
+      }
 
-    }
-    .left img{
-       width: 120px; 
-       filter: invert(100%);
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: sticky;
+        top: 0px;
+        background: rgba(0, 0, 0, 0.8);
+      }
 
-    }
-    
-    .mid{
-        display: block;
-        width: 60%;
-        margin: 20px auto;
-        font-style: bold;
-         /* border: 2px solid green;  */
+      .left img {
+        width: 100px;
+        filter: invert(100%);
+      }
 
-    }
-    .right{
-        position: absolute;
-        right: 34px;
-        top: 33px;
-        display: inline-block;
-        /* border: 2px solid yellow; */
+      .mid {
+        flex: 1;
+        text-align: center;
+      }
 
-    }
-    .navbar{
+      .navbar {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .navbar li {
         display: inline-block;
-    }
-    .navbar li{
-        display: inline-block;
-        font-size: 25px;
-    }
-    .navbar li a{
+        margin: 0 10px;
+      }
+
+      .navbar li a {
         color: white;
         text-decoration: none;
-        padding: 34px 23px;
-    }
-    .navbar li a:hover{
-      text-decoration: underline;
-      color: gray;
-    }
-    .btn{
-        margin: 0px 9px ;
+        font-size: 18px;
+        padding: 10px 15px;
+      }
+
+      .navbar li a:hover {
+        text-decoration: underline;
+        color: gray;
+      }
+
+      .right .btn {
+        margin: 0 5px;
         color: white;
         background-color: black;
-        padding: 6px 14px;
+        padding: 8px 12px;
         border: 2px solid gray;
-        font-size: 20px;
+        font-size: 16px;
         border-radius: 20px;
         cursor: pointer;
-        font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
 
-    }
-    .btn:hover{
+      .right .btn:hover {
         background-color: rgb(137, 133, 133);
-    }
-    .container{
+      }
+
+      .hero {
+        text-align: center;
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin: 15px 0;
+      }
+
+      .container {
         border: 2px solid rgb(190, 185, 173);
-        margin: 90px 80px;
-        padding: 65px;
-        width: 33%;
+        margin: 50px auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 500px;
         border-radius: 28px;
-        
-    }
-    .form-group input{
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .container h1 {
+        text-align: center;
+        font-size: 24px;
+      }
+
+      .form-group input {
         text-align: center;
         display: block;
-        width: 508px;
-        padding: 1px;
+        width: 90%;
+        padding: 10px;
         border: 2px solid black;
-        margin: 11px auto;
-        font-size: 20px;
+        margin: 10px auto;
+        font-size: 16px;
         border-radius: 8px;
-        font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
 
-    }
-    .container h1{
-        text-align: center;
-    }
-    .container button{
+      .container button {
         display: block;
         width: 90%;
         margin: 20px auto;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        font-size: 18px;
+        border: 2px solid gray;
+      }
 
-    }
+      .container button:hover {
+        background-color: gray;
+        color: black;
+      }
 
-</style>
-<body>
+      .fitness-calculator {
+        margin-top: 50px;
+      }
+
+      .fitness-calculator .result {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+        color: lightgreen;
+      }
+
+      .about-us,
+      .contact-us,
+      .pricing-section,
+      .offers-section {
+        margin-top: 50px;
+      }
+
+      .gallery {
+        display: flex;
+        overflow-x: scroll;
+        gap: 10px;
+        padding: 20px;
+        margin: 20px auto;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+      
+      }
+     
+
+      .gallery img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+      }
+
+      .pricing-table {
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 20px;
+        color: white;
+      }
+
+      .pricing-table table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      .pricing-table th,
+      .pricing-table td {
+        padding: 10px;
+        border: 1px solid gray;
+      }
+
+      .offers-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .offers-section ul li {
+        background: rgba(0, 0, 0, 0.6);
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+      .center{
+        text-align: center;
+        background-color: rgb(14, 14, 14);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .navbar li {
+          display: block;
+          margin: 10px 0;
+        }
+
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .left img {
+          width: 80px;
+          margin-bottom: 10px;
+        }
+
+        .right {
+          margin-top: 10px;
+        }
+
+        .container {
+          width: 95%;
+        }
+
+        .form-group input {
+          width: 95%;
+        }
+
+        .gallery img {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar li a {
+          font-size: 16px;
+          padding: 8px 10px;
+        }
+
+        .container h1 {
+          font-size: 20px;
+        }
+
+        .form-group input {
+          font-size: 14px;
+        }
+
+        .container button {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <header class="header">
-        <div class="left">
-            <!-- left box for logo -->
-            <img src="fit4.png" alt="">
-
-
-
-        </div>
-        <div class="mid">
-            <!-- mid box for navigation -->
-             
-             <ul class="navbar">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Fitness Calculator</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-
-        </div>
-        <div class="right">
-            <!-- right box for buttons -->
-          <button class="btn">
-                     Call us now
-          </button>
-          <button class="btn">Email us</button>
-
-        </div>
+      <div class="left">
+        <img src="fit4.png" alt="Logo" />
+      </div>
+      <div class="mid">
+        <ul class="navbar">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#fitness-calculator">Fitness Calculator</a></li>
+          <li><a href="#pricing-section">Pricing</a></li>
+          <li><a href="#offers-section">Offers</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="btn">Call Us Now</button>
+        <button class="btn">Email Us</button>
+    </div>
     </header>
+    <div class="hero">
+      <h1>Welcome to Fitness Club!</h1>
+      <p>
+        Experience the best fitness training in town with our expert trainers
+        and state-of-the-art facilities.
+      </p>
+      <!-- <button class="btn">Join Now</button> -->
+    </div>
+
+    <div class="gallery">
+      <img src="gym1.jpg" alt="Gym Equipment" />
+      <img src="gym21.jpg" alt="Workout Area" />
+      <img src="gym31.jpg" alt="Fitness Training" />
+      <img src="gym4.jpg" alt="Group Exercise" />
+      <img src="gym5.jpg" alt="Cardio Section" />
+      <img src="gym6.jpg" alt="Personal Training" />
+    </div>
+
     <div class="container">
-      <h1>Join the best gym of Nanded </h1>
+      <h1>Join the best gym of Nanded!</h1>
       <form action="noaction.php">
         <div class="form-group">
-            <input type="text" name="" placeholder="Enter your Name">
+          <input type="text" name="" placeholder="Enter your Name" />
         </div>
         <div class="form-group">
-            <input type="text" name="" placeholder="Enter your Age">
+          <input type="text" name="" placeholder="Enter your Age" />
         </div>
         <div class="form-group">
-            <input type="text" name="" placeholder="Enter your Gender">
+          <input type="text" name="" placeholder="Enter your Gender" />
         </div>
         <div class="form-group">
-            <input type="text" name="" placeholder="Enter your Locality">
+          <input type="text" name="" placeholder="Enter your Locality" />
         </div>
         <div class="form-group">
-            <input type="text" name="" placeholder="Enter your Email Id">
+          <input type="text" name="" placeholder="Enter your Email Id" />
         </div>
         <div class="form-group">
-            <input type="text" name="" placeholder="Enter your Phone Number">
+          <input type="text" name="" placeholder="Enter your Phone Number" />
         </div>
         <button class="btn">Submit</button>
       </form>
     </div>
-</body>
+
+    <!-- Fitness Calculator Section -->
+    <div id="fitness-calculator" class="container fitness-calculator">
+      <h1>Fitness Calculator</h1>
+      <form onsubmit="calculateBMI(event)">
+        <div class="form-group">
+          <input
+            type="number"
+            id="weight"
+            placeholder="Enter your Weight (kg)"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="height"
+            placeholder="Enter your Height (cm)"
+            required
+          />
+        </div>
+        <button type="submit">Calculate BMI</button>
+      </form>
+      <div class="result" id="bmi-result"></div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing-section" class="container pricing-section">
+      <h1>Membership Pricing</h1>
+      <div class="pricing-table">
+        <table>
+          <tr>
+            <th>Plan</th>
+            <th>Duration</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>1 Month</td>
+            <td>₹500</td>
+          </tr>
+          <tr>
+            <td>Standard</td>
+            <td>6 Months</td>
+            <td>₹2500</td>
+          </tr>
+          <tr>
+            <td>Premium</td>
+            <td>1 Year</td>
+            <td>₹4500</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Offers Section -->
+    <div id="offers-section" class="container offers-section">
+      <h1>Special Offers</h1>
+      <ul>
+        <li>Get 1 Month Free on an Annual Subscription!</li>
+        <li>Refer a Friend and Earn a ₹500 Discount.</li>
+        <li>Join Now and Avail a Free Fitness Consultation!</li>
+      </ul>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about-us" class="container about-us">
+      <h1>About Us</h1>
+      <p>
+        Welcome to Fitness Club, your ultimate destination for achieving your
+        health and fitness goals. Our gym is equipped with state-of-the-art
+        facilities and a team of expert trainers dedicated to guiding you on
+        your fitness journey. Whether you're looking to build muscle, lose
+        weight, or simply stay active, we have tailored programs to suit your
+        needs. Join us and be a part of a vibrant community that values health
+        and well-being.
+      </p>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact-us" class="container contact-us">
+      <h1>Contact Us</h1>
+      <p>
+        We would love to hear from you! Reach out to us for any inquiries or
+        support:
+      </p>
+      <ul>
+        <li><strong>Phone:</strong> +91-1234567890</li>
+        <li><strong>Email:</strong> info@fitnessclub.com</li>
+        <li>
+          <strong>Address:</strong> 123 Fitness Street, Nanded, Maharashtra,
+          India.
+        </li>
+      </ul>
+
+      <p>Follow us on social media for the latest updates and tips:</p>
+      <ul>
+        <li><a href="#" style="color: lightblue">Facebook</a></li>
+        <li><a href="#" style="color: lightblue">Instagram</a></li>
+        <li><a href="#" style="color: lightblue">Twitter</a></li>
+      </ul>
+    </div>
+    <footer>
+      <div class="center">
+        Copyright &copy; www.FitnessClub.com All rights reserved!
+      </div>
+    </footer>
+
+    <script>
+      function calculateBMI(event) {
+        event.preventDefault();
+        const weight = parseFloat(document.getElementById("weight").value);
+        const height =
+          parseFloat(document.getElementById("height").value) / 100; // Convert cm to meters
+
+        if (weight > 0 && height > 0) {
+          const bmi = (weight / (height * height)).toFixed(2);
+          document.getElementById(
+            "bmi-result"
+          ).innerText = `Your BMI is: ${bmi}`;
+        } else {
+          document.getElementById(
+            "bmi-result"
+          ).innerText = `Please enter valid values.`;
+        }
+      }
+    </script>
+  </body>
 </html>
